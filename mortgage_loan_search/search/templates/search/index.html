@@ -1,13 +1,61 @@
 {% extends "./base.html" %}
+{% load static %}
 
 {% block content %}
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-<button type="button" class="btn btn-link" data-mdb-ripple-color="dark">Link</button>
+<div class="theme-bg-light">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-6 mx-auto">
+        <div class="card">
+          <div class="card-header text-center theme-bg-dark" style="border-bottom: None">
+            <h6 class="text-white" style="font-weight: 500; margin-bottom: .0rem">審査基準から<br>
+              ピッタリの住宅ローンを見つけよう！</h6>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group row">
+                <label for="borrowingAmount" class="col-6 col-form-label" style="font-weight: 500">借入ご希望額</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" id="borrowingAmount" placeholder="5,000万円">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="borrowingAge" class="col-6 col-form-label" style="font-weight: 500">借入時年齢</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" id="borrowingAge" placeholder="30歳">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="payoffAge" class="col-6 col-form-label" style="font-weight: 500">完済時年齢</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" id="payoffAge" placeholder="65歳">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="annualIncome" class="col-6 col-form-label" style="font-weight: 500">年収</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" id="annualIncome" placeholder="800万円">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="evaluationColloteral" class="col-6 col-form-label" style="font-weight: 500">担保評価額</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" id="evaluationColloteral" placeholder="3,500万円">
+                </div>
+              </div>
+              <div class="form-group row">
+                <button type="submit" class="col-8 mx-auto btn theme-bg-light">
+                  <h6 class="text-white" style="font-weight: 500; margin-bottom: .0rem">この条件で検索</h6>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% for loan in search_result_loans %}
+{{ loan.name }}<br>
+{% endfor %}
 {% endblock %}

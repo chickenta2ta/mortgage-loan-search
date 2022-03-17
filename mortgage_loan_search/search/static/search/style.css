@@ -1,0 +1,11 @@
+.theme-bg-light {
+    background-color: #44b78b;
+}
+
+.theme-bg-dark {
+    background-color: #3F4E52;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
