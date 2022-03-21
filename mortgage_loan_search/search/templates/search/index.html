@@ -56,6 +56,70 @@
   </div>
 </div>
 {% for loan in search_result_loans %}
-{{ loan.name }}<br>
+<div class="container">
+  <div class="row py-5">
+    <div class="col-8 mx-auto">
+      <div class="card">
+        <div class="card-header bg-white" style="border-bottom-style: dashed; border-bottom-color: #6c757d">
+          <div class="container">
+            <div class="row py-3">
+              <div class="circle">
+                <div class="text-white">
+                  {{ forloop.counter }}
+                </div>
+              </div>
+              <div>
+                <h4 class="text-dark" style="font-weight: 300; margin-bottom: .0rem">
+                  {{ loan.name }}
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="column-6 mx-auto">
+                <h6 style="font-weight: 500; display:inline">年 </h6>
+                <h2 style="font-weight: 500; display:inline">{{ loan.interest_rate }}</h3>
+                  <h6 style="font-weight: 500; display:inline"> ％</h6>
+              </div>
+              <div class="column-6 mx-auto">
+                <div class="container">
+                  <div class="row pb-3">
+                    <small class="underline mx-auto" style="font-weight: 500">諸条件</small>
+                  </div>
+                  <div class="row">
+                    <ul class="list-group" style="line-height: 0.5">
+                      <li class="list-group-item">
+                        <small style="font-weight: 300">借入時年齢</small>
+                        <small class="theme-txt-accent" style="font-weight: 500">{{ loan.borrowing_age }}</small>
+                        <small style="font-weight: 300">歳以下</small>
+                      </li>
+                      <li class="list-group-item">
+                        <small style="font-weight: 300">完済時年齢</small>
+                        <small class="theme-txt-accent" style="font-weight: 500">{{ loan.payoff_age }}</small>
+                        <small style="font-weight: 300">歳以下</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row pt-4 pb-2">
+              <div class="column-6 mx-auto">
+                <a href={{ loan.url }}>
+                  <button class="btn theme-bg-accent waves-effect waves-light">
+                    <h6 class="text-white" style="font-weight: 500; margin-bottom: .0rem">公式サイトを見る</h6>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endfor %}
 {% endblock %}

@@ -9,7 +9,7 @@ class IndexView(generic.ListView):
         # ここからスタブ
         search_result_loans = [
             {
-                "name": "住宅ローン 全期間引下げプラン",
+                "name": "住宅ローン 全期間引下げプラン | auじぶん銀行",
                 "url": "https://www.jibunbank.co.jp/products/homeloan/interest/whole_period/",
                 "interest_rate": 0.389,
                 "borrowing_age": 45,
